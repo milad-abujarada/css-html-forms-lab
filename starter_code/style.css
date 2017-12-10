@@ -4,7 +4,7 @@
 	font-family: 'Proza Libre', sans-serif;
 	font-size: 13px;
 	border-radius: 5px;
-	padding: 3px;
+	padding: 5px;
 	/* ^^^ Forces all elements to include content, padding, and border as part of their width/height calculation: 
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
 }
@@ -82,7 +82,7 @@ select {
 
 input[type='submit']{
 	position: relative;
-	left: 85%;
+	left: 83%;
 	height: 30px;
 	font-weight: bold;
 	background-color: rgba(39, 208, 127,.5)
