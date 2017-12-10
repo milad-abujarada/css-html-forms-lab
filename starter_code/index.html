@@ -3,6 +3,7 @@
 <head>
 	<title>CSS HTML Forms Lab</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 </head>
 <body>
 	<section id="main">
@@ -96,24 +97,46 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 
-		var main = $('#main');
-		function makeResults() {
+		var $main = $('#main');
+		function makeResults(story) {
 
-			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
-
+			$( "<section class='container results'><h1>A True Story:</h1></section>" ).appendTo($main);
+			$(".results").append($("<div id='story'></div>").text(story));
+			
 			// JS Native:
-			// var results = document.createElement('section');
-			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
-			// results.className = 'container results';
-			// main.appendChild(results);
+			/*var results = document.createElement('section');
+			results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
+			results.className = 'container results';
+			results.appendTo(main);*///.appendChild(results);
+
 		};
 
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
-
+		    event.preventDefault();
 	    	// Run the 'makeResults' function seen above
-
+	    	let $characterName = $("#name").val();
+	    	let $sentimentValue = $("input[name=sentiment]:checked", ".form").val();
+	    	let $checkedOptions = $("input[name=adjective-2]:checked");
+	    	let $checkedSentiments =$checkedOptions.map(function(){
+	    		return $(this).val();
+	    	});
+	    	let $checkedSentimentsString = "";
+	    	for (let i = 0; i < $checkedSentiments.length; i++){
+	    		if ( i === 0){
+	    			$checkedSentimentsString += $checkedSentiments[i];
+	    		} else if ((i === 1) && (i === $checkedSentiments.length-1)){
+	    			$checkedSentimentsString += " and " + $checkedSentiments[i];
+	    		} else if ((i === 1) && (i < $checkedSentiments.length-1)){
+	    			$checkedSentimentsString += ", " + $checkedSentiments[i];
+	    		} else {
+	    			$checkedSentimentsString += ", and " + $checkedSentiments[i];
+	    		}
+	    		
+	    	};
+	    	let $story = "Once upon a time there was a Developer named " + $characterName + ". " + $characterName + " came to General Asssembly to " + $("#verb-1").find(":selected").text() + " the great mountain of programming knowledge. " + $("#mission").val() + ", " + $characterName + " shouted. " + "Though " + $sentimentValue + ", " + $characterName + " was able to overcome all obstacles with the power of their " + $("#noun-1").val() + " In the end, their success can be contributed entirely to their " + $checkedSentimentsString + " " + $("#noun-2").val() +".";
+	    	makeResults($story);
 	    	/*
 			
 				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:

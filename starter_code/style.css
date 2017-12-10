@@ -1,10 +1,112 @@
 /*-------- Utility Styles --------*/
 * {
 	box-sizing: border-box; 
+	font-family: 'Proza Libre', sans-serif;
+	font-size: 13px;
+	border-radius: 5px;
+	padding: 3px;
 	/* ^^^ Forces all elements to include content, padding, and border as part of their width/height calculation: 
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
 }
 
+
+
+h1 {
+	font-size: 26px;
+	font-weight: bold;
+	margin: 4% 2%;
+}
+
+#mission{
+	height: 100px;
+}
+
+#main{
+	width: 100%;
+	height: 1000px;
+	
+}
+
+.container {
+	float: left;
+}
+
+.formSection {
+	width: 30%;
+	text-align: center;
+	
+}
+
+.form {
+	background-color: #E3E6EC;
+	width: 100%;
+	text-align: left;
+}
+
+.row {
+	margin: 3px;
+}
+
+.formGroup {
+	width: 100%;
+}
+.formGroup label {
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	display: inline-block;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	padding-left: 4px;
+	display: inline;
+}
+
+.radioButtons label,
+.check label{
+	display: inline;
+}
+
+input.name,
+input[type='submit'],
+select{
+	height: 40px;
+}
+
+input[type="text"],
+textarea,
+select {
+	border: 1px solid #CCC;
+}
+
+input[type='submit']{
+	position: relative;
+	left: 85%;
+	height: 30px;
+	font-weight: bold;
+	background-color: rgba(39, 208, 127,.5)
+}
+
+input[type='submit']:hover {
+	background-color: rgba(39, 208, 127,1);
+}
+
+.results {
+	background-color: #C8DBB3;
+	width: 35%;
+	padding: 5px;
+	margin: 4px;
+	
+}
+
+#name,
+#noun-1,
+#noun-2,
+select,
+textarea{
+	width: 100%;
+}
 /* 
 	Use Google Fonts to make all of the text Proza Libre.
 
